@@ -1,55 +1,62 @@
-//constructure in c++
-//Default Constructor
-//Parameterized Constructor
-//copy Constructor
+// #include<iostream>
 #include<bits/stdc++.h>
-#include<iostream>
-#include<stdlib.h>
-using namespace std;
-class complexNumber{
-    public:
-    int real,img;
-    complexNumber(int real,int img){
-        this->real=real;
-        this->img=img;
-    }
-    void display(){
-        cout<<real<<"+i"<<img<<endl;
-    }
-    complexNumber plus(complexNumber c){
-        int r=this->real=real+c.real;
-        int i=this->img=img+c.img ;
-    //return complex NUM
-    complexNumber result(r,i);
-    return result;
-    }
-complexNumber multiply(complexNumber c){
-    int x=this->real*c.real;
-    int y=this->real*c.img;
-    int z=this->real*c.real;
-    int a=this->real*c.img;
 
-    return complexNumber(x-a,y+z);
-}
-complexNumber operator + (complexNumber c) {
-int r=this->real + c.real;
-int i=this->img+c.img;
-return complexNumber(r, i);
-    }
+using namespace std;
+
+class student{
+
+  string passcode;
+  // int,char,string,float..
+  public :
+  string name;
+  int id;
+  student(){
+  }
+
+  student(string passcode,string name,int id){
+    this->name = name;
+    // age = a;
+    // i = id;
+    this->id = id;
+    this->passcode = passcode;
+  }
+
+  // student(string passcode,string name,int id): name(name),passcode(passcode),id(id)
+  // {
+  // }
+
+
+  void into(){
+    cout<<"My name is "<<name<<" , my id is "<<id<<"passcord is "<<passcode<<endl;
+  }
+
+  void setPass(string s){
+    passcode = s;
+  }
+
+  ~student(){  
+  }
+  // delete 
+
 };
 
-int main()
-{
-    complexNumber c1(5,5);
-    complexNumber c2(1,1);
-    complexNumber c4(4,6);
-    complexNumber c3=c1.plus(c2.plus(c4));
-     //c1+c2;
-    //
-    complexNumber c6=c1+c2;
-    c6.display();
-    complexNumber c5=c1.multiply(c2);
-   c5.display();
-return 0;
+int main(){
+  student s1;
+  student s2("10","Mohit",1);
+  student s3;
 
+  s3 = s2;
+
+  // s3+s2;
+
+  s3.into();
+  // delete s2;
+  // int a = 10;
+  // int*ptri = &a;
+  // student*ptrs = &s2;
+
+  // cout<<(*ptrs).name<<endl;
+  // cout<<ptrs->name<<endl;
+
+  return 0;
 }
